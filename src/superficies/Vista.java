@@ -14,42 +14,69 @@ import java.util.Scanner;
 public class Vista {
 
     private static Scanner sc;
+    static float result;
 
     public Vista() {
-        
+
+    }
+
+    public static void printFinally(Modelo type) {
+        switch (type.getType()) {
+            case "square":
+                System.out.println("The area for your square: " + result);
+                break;
+            case "circle":
+                System.out.println("Your Circles area is " + result);
+                break;
+            case "triangle":
+                System.out.println("Your triangle area is: " + result);
+                break;
+            case "rectangle":
+                System.out.println("The area for your rectangle is: " + result);
+                break;
+        }
     }
 
     public static float choose(Modelo type) {
-        float resultado;
-        System.out.println("What shape would you like to find the area of? (square, circle, triangle, rectangle):");
         switch (type.getType()) {
             case "square":
-                resultado = type.getNum1() * type.getNum2();
+                result = type.getNum1() * type.getNum2();
                 break;
             case "circle":
-                resultado = type.getNum1() * type.getNum2();
-                resultado = (float) (3.14159265 * resultado);
+                result = type.getNum1() * type.getNum2();
+                result = (float) (3.14159265 * result);
                 break;
             case "triangle":
-                resultado = (float) (0.5 * type.getNum1() * type.getNum2());;
+                result = (float) (0.5 * type.getNum1() * type.getNum2());
                 break;
             case "rectangle":
-                resultado = type.getNum1() * type.getNum2();
+                result = type.getNum1() * type.getNum2();
+
                 break;
             default:
-                resultado = 0;
+                result = 0;
         }
-        return resultado;
+        return result;
     }
 
     /**
      *
      * @return float number to use.
      */
-    public static float setNumber() {
+    public static float setLength() {
         sc = new Scanner(System.in);
         System.out.println("what is the length?");
         return sc.nextFloat();
+    }
+
+    /**
+     * 
+     * @return choose type (square, circle, triangle, rectangle)
+     */
+    public static String setType() {
+        sc = new Scanner(System.in);
+        System.out.println("What shape would you like to find the area of? (square, circle, triangle, rectangle):");
+        return sc.next();
     }
 
 }
