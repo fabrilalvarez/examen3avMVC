@@ -3,6 +3,8 @@ package superficies;
 /**
  *
  * @author @FranJAbrilA <ffrannabril@gmail.com>
+ * 
+ * GESTION DE LOS DATOS DEL PROGRAMA
  */
 public class Modelo {
 

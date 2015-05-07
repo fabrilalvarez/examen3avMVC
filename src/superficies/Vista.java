@@ -6,6 +6,8 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author @FranJAbrilA <ffrannabril@gmail.com>
+ * 
+ * MENSAJES PARA EL USUARIO
  */
 public class Vista {
 
