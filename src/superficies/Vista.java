@@ -6,6 +6,7 @@
 package superficies;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.util.Scanner;
  */
 public class Vista {
 
-    private static Scanner sc;
+    private static Scanner sc1, sc2, sc3;
     static float result;
 
     public Vista() {
@@ -23,16 +24,16 @@ public class Vista {
     public static void printFinally(Modelo type) {
         switch (type.getType()) {
             case "square":
-                System.out.println("The area for your square: " + result);
+                JOptionPane.showMessageDialog(null, "The area for your square: " + result);
                 break;
             case "circle":
-                System.out.println("Your Circles area is " + result);
+                JOptionPane.showMessageDialog(null, "Your Circles area is " + result);
                 break;
             case "triangle":
-                System.out.println("Your triangle area is: " + result);
+                JOptionPane.showMessageDialog(null, "Your triangle area is: " + result);
                 break;
             case "rectangle":
-                System.out.println("The area for your rectangle is: " + result);
+                JOptionPane.showMessageDialog(null, "The area for your rectangle is: " + result);
                 break;
         }
     }
@@ -59,24 +60,13 @@ public class Vista {
         return result;
     }
 
-    /**
-     *
-     * @return float number to use.
-     */
-    public static float setLength() {
-        sc = new Scanner(System.in);
-        System.out.println("what is the length?");
-        return sc.nextFloat();
-    }
-
-    /**
-     * 
-     * @return choose type (square, circle, triangle, rectangle)
-     */
-    public static String setType() {
-        sc = new Scanner(System.in);
-        System.out.println("What shape would you like to find the area of? (square, circle, triangle, rectangle):");
-        return sc.next();
+    public static void run() {
+        Modelo contenedor = new Modelo();
+        contenedor.num1 = Float.parseFloat(JOptionPane.showInputDialog("num1"));
+        contenedor.shapeType = JOptionPane.showInputDialog("What shape would you like to find the area of? (square, circle, triangle, rectangle):");
+        contenedor.num2 = Float.parseFloat(JOptionPane.showInputDialog("num2"));
+        contenedor.setResult(choose(contenedor));
+        printFinally(contenedor);
     }
 
 }
