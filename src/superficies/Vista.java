@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package superficies;
 
 import java.util.Scanner;
@@ -21,6 +16,10 @@ public class Vista {
 
     }
 
+    /**
+     * 
+     * @param type to get "type" then can print the messaje.
+     */
     public static void printFinally(Modelo type) {
         switch (type.getType()) {
             case "square":
@@ -38,6 +37,11 @@ public class Vista {
         }
     }
 
+    /**
+     * 
+     * @param type "class Modelo" then getType
+     * @return result 
+     */
     public static float choose(Modelo type) {
         switch (type.getType()) {
             case "square":
@@ -60,11 +64,14 @@ public class Vista {
         return result;
     }
 
+    /**
+     * Capture parameters to start the program
+     */
     public static void run() {
         Modelo contenedor = new Modelo();
-        contenedor.num1 = Float.parseFloat(JOptionPane.showInputDialog("num1"));
         contenedor.shapeType = JOptionPane.showInputDialog("What shape would you like to find the area of? (square, circle, triangle, rectangle):");
-        contenedor.num2 = Float.parseFloat(JOptionPane.showInputDialog("num2"));
+        contenedor.sideLength = Float.parseFloat(JOptionPane.showInputDialog("Side Length"));
+        contenedor.sideHeight = Float.parseFloat(JOptionPane.showInputDialog("Side Height"));
         contenedor.setResult(choose(contenedor));
         printFinally(contenedor);
     }

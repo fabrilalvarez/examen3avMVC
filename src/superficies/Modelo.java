@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package superficies;
 
 /**
@@ -11,27 +6,32 @@ package superficies;
  */
 public class Modelo {
 
-    float num1, num2, result;
+    float sideLength, sideHeight, result;
     String shapeType;
 
+    /**
+     *
+     * @return shapeType to choose (square, circle, triangle, rectangle)
+     */
     public String getType() {
         return shapeType;
     }
 
+    // setter & getter
     public float getNum1() {
-        return num1;
+        return sideLength;
     }
 
     public void setNum1(float num1) {
-        this.num1 = num1;
+        this.sideLength = num1;
     }
 
     public float getNum2() {
-        return num2;
+        return sideHeight;
     }
 
     public void setNum2(float num2) {
-        this.num2 = num2;
+        this.sideHeight = num2;
     }
 
     public float getResult() {
