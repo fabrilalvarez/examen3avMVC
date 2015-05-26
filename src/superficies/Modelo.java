@@ -11,6 +11,15 @@ public class Modelo {
     float sideLength, sideHeight, result;
     String shapeType;
 
+    public Modelo(float sideLength, float sideHeight, String shapeType) {
+        this.sideLength = sideLength;
+        this.sideHeight = sideHeight;
+        this.shapeType = shapeType;
+    }
+
+    public Modelo() {
+    }
+
     /**
      *
      * @return shapeType to choose (square, circle, triangle, rectangle)
