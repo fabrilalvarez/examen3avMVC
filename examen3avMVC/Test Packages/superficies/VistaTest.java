@@ -53,7 +53,10 @@ public class VistaTest {
         
         Modelo type4 = new Modelo(10, 10, "rectangle");
         result = Vista.choose(type4);
-        assertEquals(100, result, 0.0);
+        assertEquals(100, result, 0.0); 
+        
+        
+        
 
     }
 
